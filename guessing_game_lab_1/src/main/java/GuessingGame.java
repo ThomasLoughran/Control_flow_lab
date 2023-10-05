@@ -10,14 +10,21 @@ public class GuessingGame {
 //        set while loop false until correct guess
         boolean correctGuess = false;
         int guess;
-        
+
         while (correctGuess == false) {
 
 //            prompt for user input
             Scanner reader = new Scanner(System.in);
+            String response = reader.nextLine();
+
+//            check for quit request
+            if (response.equals("q")) {
+               System.out.println("Exiting");
+               System.exit(0);
+            }
 
 //            store input as current guess
-            guess = Integer.parseInt(reader.nextLine());
+            guess = Integer.parseInt(response);
 
 //                    return higher or lower response
             if (guess == ans) {
@@ -30,9 +37,6 @@ public class GuessingGame {
             else {
                 System.out.println("Lower");
             }
-
-
         }
-
     }
 }
