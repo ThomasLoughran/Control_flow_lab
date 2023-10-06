@@ -31,7 +31,7 @@ public class GuessingGame {
                 System.out.println("Correct, the secret number is " + ans);
                 correctGuess = true;
             }
-            else if (guess <= ans) {
+            else if (guess < ans) {
                 System.out.println("Higher");
             }
             else {
